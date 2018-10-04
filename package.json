@@ -7,8 +7,10 @@
     "materialize-css": "^1.0.0-rc.2",
     "moment": "^2.22.2",
     "react": "^16.5.1",
+    "react-datepicker": "^1.6.0",
     "react-dom": "^16.5.1",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "sweetalert": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
