@@ -15,7 +15,7 @@ export default class Form extends Component {
 
         const {date, weight} = this.state;
 		console.log(date, weight);
-		if (!weight || weight < 0) {
+		if (!weight || weight < 0 || isNaN(weight)) {
 			swal("Lectura invalida", "El registro de peso debe ser valido", "error");
 		}else{
 			this.props.onAcepted(this.state)
@@ -32,8 +32,9 @@ export default class Form extends Component {
     
 	render() {
 		return (
-			<div className="row container-modal">
-				<div className="form-container col s4 offset-s4 z-depth-4">
+			<div className={`row container-modal scale-transition scale-out
+			 	${this.props.visible ? "scale-in":""}`}>
+				<div className= "form-container  col s4 offset-s4 z-depth-4">
 					<form action="">
 						<label htmlFor="fecha">
 							Fecha:
@@ -64,6 +65,7 @@ export default class Form extends Component {
 							type="button"
 							value="Cerrar"
 							className="btn waves-effect blue lighten-3 btn-action"
+							onClick={()=>this.props.closeModal()}
 						/>
 					</form>
 				</div>
