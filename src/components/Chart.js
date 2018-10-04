@@ -14,6 +14,16 @@ export default class Chart extends Component {
         this.initGrafica()
     }
 
+    componentWillReceiveProps(nextProps){
+        console.log(nextProps.registros)
+        if(nextProps.registros != this.state.registros){
+            this.setState({
+                registros:[...nextProps.registros]
+            })
+        }
+        this.initGrafica()
+    }
+
     initGrafica = () => {
         let { registros } = this.state
         Highcharts.chart('grafico',{
