@@ -23,9 +23,7 @@ export default ({registros}) => {
             </thead>
             <tbody>
                 {
-                registros.map(registro => (
-                    this.renderFila(registro)
-                ))
+                registros.map(registro => renderFila(registro))
                 }
             </tbody>
         </table>
